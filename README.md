@@ -8,4 +8,5 @@ LEDC関数、ESP32Servo、ServoEasingを使ったPWMサーボの制御
 
 ## GetJSONTest
 
-wifi接続、HTTPClientによるJSON取得、ArduinoJSONによるJSONファイル読み出し
+wifi接続、HTTPClientによるJSON取得、ArduinoJSONによるJSONファイル読み出し  
+[M5Stackでwifiに接続しJSONを取得する](https://yamaccu.github.io/tils/20220808-M5Stack-JSON)

@@ -7,21 +7,29 @@
 const char *ssid = "xxxxxx";
 const char *password = "xxxxxx";
 
-String payload;
-
 void setup()
 {
+  String payload;
+  DynamicJsonDocument doc(4096);
+
   Serial.begin(119200);
   WiFi.begin(ssid, password);
-
   auto cfg = M5.config();
   M5.begin(cfg);
 
+  unsigned long startTime = millis();
   Serial.print("接続中");
   while (WiFi.status() != WL_CONNECTED)
   {
     delay(500);
     Serial.print(".");
+    if(millis() - startTime > 10000)     // タイムアウト(10秒)
+    {
+      WiFi.disconnect(true);
+      delay(100);
+      WiFi.begin(ssid, password);
+      startTime = millis();
+    }
   }
   Serial.println();
   Serial.println("接続完了");
@@ -47,7 +55,6 @@ void setup()
   }
   WiFi.disconnect(true);
 
-  DynamicJsonDocument doc(4096);
   deserializeJson(doc, payload);
   String date = doc[0]["reportDatetime"];
   String forecast = doc[0]["timeSeries"][0]["areas"][0]["weathers"][0];
