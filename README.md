@@ -2,8 +2,13 @@ M5Stackの勉強（自分用）
 
 ## Aquestalk / Aquestalk-M5Unified
 
-Aquestalkによる日本語出力＋M5Stack-Avatar
+Aquestalkによる日本語出力＋M5Stack-Avatarによる顔の描画  
 [M5StackでAquesTalkを使って音声出力する](https://yamaccu.github.io/tils/20220829-M5Stack-AquesTalk)
+
+## DrawImageTest
+
+LCDにjpg/bmp/pngを描画  
+[M5StackでLCD画面に画像を表示する](https://yamaccu.github.io/tils/20220908-M5Stack-image)
 
 ## GetJSONTest
 
